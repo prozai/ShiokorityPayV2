@@ -9,9 +9,11 @@ import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.shiokority.shiokoritypay.R
 import com.shiokority.shiokoritypay.view.signup.SignUpActivity
 import com.shiokority.shiokoritypay.view.dashboard.MainActivity
+import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {
 
@@ -20,10 +22,13 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var buttonLogin: Button
     private lateinit var buttonTogglePassword: ImageButton
     private lateinit var signUp: TextView
+    private lateinit var consumerAuthentication: ConsumerAuthentication
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        consumerAuthentication = ConsumerAuthentication()
 
         editTextUsername = findViewById(R.id.editTextUsername)
         editTextPassword = findViewById(R.id.editTextPassword)
@@ -32,16 +37,26 @@ class LoginActivity : AppCompatActivity() {
         signUp = findViewById(R.id.signUp)
 
         buttonLogin.setOnClickListener {
-            val username = editTextUsername.text.toString().trim()
+            val email = editTextUsername.text.toString().trim()
             val password = editTextPassword.text.toString().trim()
 
-            if (username.isNotEmpty() && password.isNotEmpty()) {
-                // Here you would typically validate the credentials against a database or API
-                // For this example, we'll just check if they're not empty
-                startActivity(Intent(this, MainActivity::class.java))
-                finish()
+            if (email.isNotEmpty() && password.isNotEmpty()) {
+                lifecycleScope.launch {
+                    val result = consumerAuthentication.authenticateConsumer(email, password)
+                    if (result != null) {
+                        if (result.success) {
+                            Toast.makeText(this@LoginActivity, "Login successful: ${result.message}", Toast.LENGTH_SHORT).show()
+                            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                            finish()
+                        } else {
+                            Toast.makeText(this@LoginActivity, "Login failed: ${result.message}", Toast.LENGTH_SHORT).show()
+                        }
+                    } else {
+                        Toast.makeText(this@LoginActivity, "Login failed: Unknown error", Toast.LENGTH_SHORT).show()
+                    }
+                }
             } else {
-                Toast.makeText(this, "Please enter both username and password", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please enter both email and password", Toast.LENGTH_SHORT).show()
             }
         }
 
