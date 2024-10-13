@@ -16,7 +16,7 @@
         tools:targetApi="34">
 
         <activity
-            android:name=".view.SplashActivity"
+            android:name=".view.splash.SplashActivity"
             android:theme="@style/SplashTheme"
             android:exported="true">
             <intent-filter>
@@ -26,11 +26,15 @@
         </activity>
 
         <activity
-            android:name=".view.LoginActivity"
+            android:name=".view.onboarding.OnboardingActivity"
             android:exported="false" />
 
         <activity
-            android:name=".view.MainActivity"
+            android:name=".view.authentication.login.LoginActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".view.dashboard.MainActivity"
             android:exported="false">
         </activity>
 
