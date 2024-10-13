@@ -7,42 +7,42 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.shiokority.shiokoritypay.view.ui.home.HomeFragment"
+        android:name="com.shiokority.shiokoritypay.view.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_payment"
-        android:name="com.shiokority.shiokoritypay.view.ui.payment.PaymentFragment"
+        android:name="com.shiokority.shiokoritypay.view.payment.PaymentFragment"
         android:label="@string/title_payment"
         tools:layout="@layout/fragment_payment" />
     <fragment
         android:id="@+id/navigation_pay"
-        android:name="com.shiokority.shiokoritypay.view.ui.pay.PayFragment"
+        android:name="com.shiokority.shiokoritypay.view.pay.PayFragment"
         android:label="@string/title_pay"
         tools:layout="@layout/fragment_payment" />
 
     <fragment
         android:id="@+id/navigation_history"
-        android:name="com.shiokority.shiokoritypay.view.ui.history.HistoryFragment"
+        android:name="com.shiokority.shiokoritypay.view.history.HistoryFragment"
         android:label="@string/title_history"
         tools:layout="@layout/fragment_history" />
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.shiokority.shiokoritypay.view.ui.profile.ProfileFragment"
+        android:name="com.shiokority.shiokoritypay.view.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.shiokority.shiokoritypay.view.ui.dashboard.DashboardFragment"
+        android:name="com.shiokority.shiokoritypay.view.dashboard.DashboardFragment"
         android:label="@string/title_payment"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.shiokority.shiokoritypay.view.ui.notifications.NotificationsFragment"
+        android:name="com.shiokority.shiokoritypay.view.notifications.NotificationsFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_notifications" />
 <!-- commented out for use later history list fragment -->
