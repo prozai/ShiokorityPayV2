@@ -6,9 +6,11 @@ import android.text.InputType
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.shiokority.shiokoritypay.R
+import com.shiokority.shiokoritypay.view.signup.SignUpActivity
 import com.shiokority.shiokoritypay.view.dashboard.MainActivity
 
 class LoginActivity : AppCompatActivity() {
@@ -17,6 +19,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var editTextPassword: EditText
     private lateinit var buttonLogin: Button
     private lateinit var buttonTogglePassword: ImageButton
+    private lateinit var signUp: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +29,7 @@ class LoginActivity : AppCompatActivity() {
         editTextPassword = findViewById(R.id.editTextPassword)
         buttonLogin = findViewById(R.id.buttonLogin)
         buttonTogglePassword = findViewById(R.id.buttonTogglePassword)
+        signUp = findViewById(R.id.signUp)
 
         buttonLogin.setOnClickListener {
             val username = editTextUsername.text.toString().trim()
@@ -43,6 +47,11 @@ class LoginActivity : AppCompatActivity() {
 
         buttonTogglePassword.setOnClickListener {
             togglePasswordVisibility()
+        }
+
+        signUp.setOnClickListener {
+            startActivity(Intent(this, SignUpActivity::class.java))
+            finish()
         }
     }
 
