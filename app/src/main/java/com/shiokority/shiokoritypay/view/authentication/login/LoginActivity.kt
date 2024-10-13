@@ -14,6 +14,7 @@ import com.shiokority.shiokoritypay.R
 import com.shiokority.shiokoritypay.view.signup.SignUpActivity
 import com.shiokority.shiokoritypay.view.dashboard.MainActivity
 import kotlinx.coroutines.launch
+import org.mindrot.jbcrypt.BCrypt
 
 class LoginActivity : AppCompatActivity() {
 
@@ -39,7 +40,6 @@ class LoginActivity : AppCompatActivity() {
         buttonLogin.setOnClickListener {
             val email = editTextUsername.text.toString().trim()
             val password = editTextPassword.text.toString().trim()
-
             if (email.isNotEmpty() && password.isNotEmpty()) {
                 lifecycleScope.launch {
                     val result = consumerAuthentication.authenticateConsumer(email, password)
@@ -85,4 +85,15 @@ class LoginActivity : AppCompatActivity() {
 
         editTextPassword.setSelection(editTextPassword.text.length)
     }
+
+    fun hashPassword(plainPassword: String): String {
+        val salt = BCrypt.gensalt(12) // Generate a salt
+        return BCrypt.hashpw(plainPassword, salt)
+    }
+
+    fun checkPasswordHashed(plainPassword: String): Boolean {
+        val checkPasswordHashed = BCrypt.checkpw(editTextPassword.toString(), hashPassword(editTextPassword.toString()))
+        return checkPasswordHashed
+    }
+
 }

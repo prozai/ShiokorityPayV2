@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- For development and testing environments, allow cleartext traffic -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">127.0.0.1</domain> <!-- Allow cleartext to localhost -->
+        <domain includeSubdomains="true">your-testing-domain.com</domain> <!-- Add other dev domains if needed -->
+    </domain-config>
+
+    <!-- For production environments, allow only encrypted HTTPS traffic -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">shiokority.online</domain> <!-- Add production domains -->
+    </domain-config>
+</network-security-config>
