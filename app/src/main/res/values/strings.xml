@@ -2,7 +2,7 @@
     <string name="app_name">ShiokorityPay</string>
     <string name="title_home">Home</string>
     <string name="title_payment">Payment</string>
-    <string name="title_history">History</string>
+    <string name="title_history">Transaction History</string>
     <string name="title_profile">Profile</string>
     <string name="title_pay">Pay</string>
     <string name="text_username">Username</string>
@@ -16,4 +16,9 @@
     <string name="button_next">Next</string>
     <string name="tab_layout_description">describe onboarding content</string>
     <string name="create_account_text">Create your Account</string>
+    <string name="text_transaction_history">Transaction History</string>
+    <string name="text_search">Search</string>
+    <string name="text_filter_transaction_history">filter transaction history</string>
+    <string name="no_transactions_found">No Transactions Found</string>
+    <string name="transactions_will_appear_here">Your transactions will appear here</string>
 </resources>

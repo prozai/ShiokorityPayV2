@@ -11,4 +11,14 @@
     <color name="primary_shiokority_color_blue">#153247</color>
     <color name="primary_shiokority_color_dark_blue">#153247</color>
     <color name="primary_on_shiokority_color_white">#F9F9F9</color>
+    <color name="background_color">#F5F5F5</color>
+    <color name="primary_color">#1976D2</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="icon_background">#E3F2FD</color>
+    <color name="status_success">#4CAF50</color>
+    <color name="status_pending">#FFC107</color>
+    <color name="status_failed">#F44336</color>
+    <color name="status_refunded">#153247</color>
+
 </resources>

@@ -1,4 +1,4 @@
-package com.shiokority.shiokoritypay.view.onboarding
+package com.shiokority.shiokoritypay.adapter
 
 import android.view.LayoutInflater
 import android.view.View

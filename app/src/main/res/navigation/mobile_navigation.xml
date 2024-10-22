@@ -20,7 +20,7 @@
         android:id="@+id/navigation_pay"
         android:name="com.shiokority.shiokoritypay.view.pay.PayFragment"
         android:label="@string/title_pay"
-        tools:layout="@layout/fragment_payment" />
+        tools:layout="@layout/fragment_pay" />
 
     <fragment
         android:id="@+id/navigation_history"
@@ -51,4 +51,5 @@
 <!--        android:name="com.shiokority.shiokoritypay.ui.history.HistoryFragment"-->
 <!--        android:label="@string/title_history"-->
 <!--        tools:layout="@layout/fragment_item" />-->
+
 </navigation>
